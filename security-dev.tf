@@ -1,6 +1,7 @@
+
 resource "aws_security_group" "sg-jumpbox-dev" {
-  name        = "pes-qa-${var.servico}-${var.ambiente}"
-  description = "sg-pes-qa-${var.servico}-${var.ambiente}"
+  name        = "pes-dev-${var.servico}-${var.ambiente}"
+  description = "sg-pes-dev-${var.servico}-${var.ambiente}"
   vpc_id      = data.aws_vpc.vpc_private.id
 
   ingress {
@@ -11,21 +12,12 @@ resource "aws_security_group" "sg-jumpbox-dev" {
     description = "Acesso SSH "
   }
 
-
   ingress {
-    from_port   = 8080
-    to_port     = 8080
+    from_port   = 5432  
+    to_port     = 5432
     protocol    = "tcp"
-    cidr_blocks       = ["0.0.0.0/0"]
-    description = "Acesso SSH "
-  }
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks       = ["0.0.0.0/0"]
-    description = "Acesso SSH "
+    self = true
+    description = "Acesso RDS"    
   }
 
   egress {
@@ -36,7 +28,7 @@ resource "aws_security_group" "sg-jumpbox-dev" {
   }
 
     tags = {
-        Name =  "pes-qa-${var.servico}-${var.ambiente}"
+        Name =  "pes-dev-${var.servico}-${var.ambiente}"
         # Product = "${var.product}"
         # Environment = "${var.environment}"
         # Cost = "${var.customer}"
