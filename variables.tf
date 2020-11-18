@@ -5,7 +5,7 @@ variable "name" {
 
 variable "aws-region" {
   type    = string
-  default = ""
+  default = "us-east-2"
 }
 
 variable "allowed_ip" {
@@ -63,15 +63,17 @@ variable "label_order" {
 
 variable "ami" {
   type = string
+  default = "ami-0dd9f0e7df0f0a138"
 }
 
 variable "instance_type" {
   type = string
+  default = "1"
 }
 
 variable "keyname" {
   type    = string
-  default = ""
+  default = "robertoeric10"
 }
 
 
@@ -87,7 +89,7 @@ variable "vpc_id" {
 
 variable "vpc_name" {
   type    = string
-  default = ""
+  default = "default"
 }
 
 variable "associate_public_ip_address" {
@@ -100,9 +102,9 @@ variable "user_data" {
   default = ""
 }
 
-variable "availability_zone" {
-  type = list(string)
-}
+# variable "availability_zone" {
+#   type = list(string)
+# }
 
 variable "ebs_device_name" {
   type    = list(string)
@@ -161,35 +163,35 @@ variable "netclaro" {
 
 variable "projeto" {
   type    = string
-  default = ""
+  default = "student"
 }
 
 variable "produto" {
   type    = string
-  default = ""
+  default = "hml"
 }
 
 variable "marca" {
   type    = string
-  default = ""
+  default = "std"
 }
 
 variable "ambiente" {
   type    = string
-  default = ""
+  default = "dev"
 }
 
 variable "servico" {
   type    = string
-  default = ""
+  default = "std"
 }
 
 variable "deploy" {
   type    = string
-  default = ""
+  default = "terraform"
 }
 
 variable "subnets_private_name" {
   type    = string
-  default = ""
+  default = "public"
 }
