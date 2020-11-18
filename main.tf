@@ -1,8 +1,12 @@
 provider "aws" {
-  region                  = var.aws-region
-  shared_credentials_file = "$HOME/.aws/credentials"
-  profile                 = var.aws-credentials-profile
+  region = var.aws-region
 }
+
+# provider "aws" {
+#   region                  = var.aws-region
+#   shared_credentials_file = "$HOME/.aws/credentials"
+#   profile                 = var.aws-credentials-profile
+# }
 
 terraform {
   backend "s3" {
