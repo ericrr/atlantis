@@ -12,14 +12,6 @@ resource "aws_security_group" "sg-jumpbox-dev" {
     description = "Acesso SSH "
   }
 
-  ingress {
-    from_port   = 5432  
-    to_port     = 5432
-    protocol    = "tcp"
-    self = true
-    description = "Acesso RDS"    
-  }
-
   egress {
     from_port       = 0
     to_port         = 0

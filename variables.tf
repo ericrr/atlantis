@@ -68,7 +68,7 @@ variable "ami" {
 
 variable "instance_type" {
   type = string
-  default = "1"
+  default = "t2.micro"
 }
 
 variable "keyname" {
