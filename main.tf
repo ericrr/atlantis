@@ -17,7 +17,7 @@ resource "aws_instance" "jumpbox" {
     ami = var.ami
     instance_type = var.instance_type
     key_name = var.keyname
-    vpc_security_group_ids = [ aws_security_group.sg-jumpbox-qa.id ]
+    vpc_security_group_ids = [ aws_security_group.sg-jumpbox.id ]
     subnet_id = "${element(tolist(data.aws_subnet_ids.private.ids), count.index)}"
 #    availability_zone = "${element(var.azs, count.index)}"
 
