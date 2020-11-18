@@ -13,7 +13,7 @@ key_name                = "robertoeric10"
 
 ami                   = "ami-0dd9f0e7df0f0a138"
 instance_type         = "t2.micro"
-instance_count        = 2
+instance_count        = 1
 # disk_size_root_device = 8
 # assign_eip_address    = true
 # ebs_volume_enabled    = false
