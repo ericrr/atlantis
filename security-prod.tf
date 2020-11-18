@@ -1,4 +1,4 @@
-resource "aws_security_group" "sg-jumpbox-dev" {
+resource "aws_security_group" "sg-jumpbox-prod" {
   name        = "pes-prod-${var.servico}-${var.ambiente}"
   description = "sg-pes-prod-${var.servico}-${var.ambiente}"
   vpc_id      = data.aws_vpc.vpc_private.id
